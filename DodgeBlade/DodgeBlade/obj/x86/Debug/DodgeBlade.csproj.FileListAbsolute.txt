@@ -1,0 +1,8 @@
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\background.xnb
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\DodgeBlade.exe
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\DodgeBlade.pdb
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.csprojResolveAssemblyReference.cache
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.exe
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.pdb
+c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\threeringsSingle.xnb
