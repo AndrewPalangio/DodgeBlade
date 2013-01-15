@@ -23,7 +23,13 @@ namespace DodgeBlade {
         Vector2 spritePos;
         Vector2 velocity;
 
+        Random random = new Random();
+
         Color mycolor = new Color(255, 255, 255);
+
+        float rotation;
+        float scale = 50;
+        int scaleOperation = 1;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -36,7 +42,7 @@ namespace DodgeBlade {
         protected override void Initialize() {
 
             spritePos = new Vector2(GAMEWIDTH / 2, GAMEHEIGHT / 2);
-            velocity = new Vector2(200, 1);
+            velocity = new Vector2(random.Next(200, 301), random.Next(200, 301));
 
             base.Initialize();
         }
@@ -73,11 +79,24 @@ namespace DodgeBlade {
             }
 
 
-            if ((spritePos.X + threerings.Width) >= GAMEWIDTH || spritePos.X <= 0) {
+            if (rotation < 360) {
+                rotation++;
+            }
+            else if (rotation >= 360) {
+                rotation = 0;
+            }
+
+            if (scale == 100 || scale == 0) {
+                scaleOperation *= -1;
+            }
+
+            scale += scaleOperation;
+
+            if ((spritePos.X + threerings.Width/2) >= GAMEWIDTH || spritePos.X - threerings.Width/2 <= 0) {
                 velocity.X *= -1;
             }
 
-            if ((spritePos.Y + threerings.Height) >= GAMEHEIGHT || spritePos.Y <= 0) {
+            if ((spritePos.Y + threerings.Height/2) >= GAMEHEIGHT || spritePos.Y - threerings.Height/2 <= 0) {
                 velocity.Y *= -1;
             }
 
@@ -93,7 +112,10 @@ namespace DodgeBlade {
             spriteBatch.Begin();
 
             spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), mycolor);
-            spriteBatch.Draw(threerings, spritePos, Color.White);
+            // spriteBatch.Draw(threerings, spritePos, Color.White);
+            // spriteBatch.Draw(threerings, new Rectangle((int)spritePos.X, (int)spritePos.Y, threerings.Width, threerings.Height), Color.White);
+            spriteBatch.Draw(threerings, new Rectangle((int)spritePos.X, (int)spritePos.Y, (int)(threerings.Width * (scale * 0.01)), (int)(threerings.Height * (scale * 0.01))), new Rectangle(0, 0, threerings.Width, threerings.Height), Color.White, MathHelper.ToRadians(rotation), new Vector2(threerings.Width / 2, threerings.Height / 2), SpriteEffects.FlipHorizontally, 1f);
+
 
             spriteBatch.End();
 
