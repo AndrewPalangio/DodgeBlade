@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodgeBlade", "DodgeBlade\DodgeBlade\DodgeBlade.csproj", "{5FC5D4D7-D09A-4269-BAD8-C6FFF5352FCD}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "DodgeBladeContent", "DodgeBlade\DodgeBladeContent\DodgeBladeContent.contentproj", "{113DF4D9-1C55-4B7F-BA0A-1B02E95A092A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodgeBladeContent", "DodgeBlade\DodgeBladeContent\DodgeBladeContent.contentproj", "{113DF4D9-1C55-4B7F-BA0A-1B02E95A092A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteClasses", "SpriteClasses\SpriteClasses.csproj", "{1DE3E67A-809B-4DF7-9672-95E3432F994A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{5FC5D4D7-D09A-4269-BAD8-C6FFF5352FCD}.Release|x86.Build.0 = Release|x86
 		{113DF4D9-1C55-4B7F-BA0A-1B02E95A092A}.Debug|x86.ActiveCfg = Debug|x86
 		{113DF4D9-1C55-4B7F-BA0A-1B02E95A092A}.Release|x86.ActiveCfg = Release|x86
+		{1DE3E67A-809B-4DF7-9672-95E3432F994A}.Debug|x86.ActiveCfg = Debug|x86
+		{1DE3E67A-809B-4DF7-9672-95E3432F994A}.Debug|x86.Build.0 = Debug|x86
+		{1DE3E67A-809B-4DF7-9672-95E3432F994A}.Release|x86.ActiveCfg = Release|x86
+		{1DE3E67A-809B-4DF7-9672-95E3432F994A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

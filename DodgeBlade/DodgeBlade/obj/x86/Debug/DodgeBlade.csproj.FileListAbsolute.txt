@@ -6,3 +6,13 @@ c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\Dod
 c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.exe
 c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.pdb
 c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\threeringsSingle.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.csprojResolveAssemblyReference.cache
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.exe
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\obj\x86\Debug\DodgeBlade.pdb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\background.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\threeringsSingle.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\DodgeBlade.exe
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\DodgeBlade.pdb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.dll
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.pdb

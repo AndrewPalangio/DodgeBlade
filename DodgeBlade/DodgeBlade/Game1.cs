@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
+using SpriteClasses;
+
 namespace DodgeBlade {
     public class Game1 : Microsoft.Xna.Framework.Game {
         GraphicsDeviceManager graphics;
@@ -17,19 +19,19 @@ namespace DodgeBlade {
         public const short GAMEWIDTH = 1280;
         public const short GAMEHEIGHT = 720;
 
-        Texture2D background;
-        Texture2D threerings;
+        Texture2D backgroundTexture;
+        Texture2D threeringsTexture;
 
-        Vector2 spritePos;
-        Vector2 velocity;
+        Sprite background;
+        Sprite threerings;
 
         Random random = new Random();
 
         Color mycolor = new Color(255, 255, 255);
 
-        float rotation;
-        float scale = 50;
-        int scaleOperation = 1;
+        //float rotation;
+        //float scale = 50;
+        //int scaleOperation = 1;
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -41,84 +43,38 @@ namespace DodgeBlade {
 
         protected override void Initialize() {
 
-            spritePos = new Vector2(GAMEWIDTH / 2, GAMEHEIGHT / 2);
-            velocity = new Vector2(random.Next(200, 301), random.Next(200, 301));
-
             base.Initialize();
         }
 
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            background = Content.Load<Texture2D>("images/background");
-            threerings = Content.Load<Texture2D>("images/threeringsSingle");
+            backgroundTexture = Content.Load<Texture2D>("images/background");
+            threeringsTexture = Content.Load<Texture2D>("images/threeringsSingle");
 
+            background = new Sprite(backgroundTexture, new Vector2(0, 0), new Vector2(0, 0), false, 0, 1, SpriteEffects.None);
+            threerings = new Sprite(threeringsTexture, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2), new Vector2(random.Next(200, 301), random.Next(200, 301)), true, 10, 1, SpriteEffects.None);
         }
 
         protected override void UnloadContent() {
         }
 
         protected override void Update(GameTime gameTime) {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) {
-                mycolor = new Color(0, 0, 255);
-            }
-            else if (GamePad.GetState(PlayerIndex.One).Buttons.Y == ButtonState.Pressed) {
-                mycolor = new Color(255, 255, 0);
-            }
-            else if (GamePad.GetState(PlayerIndex.One).Buttons.B == ButtonState.Pressed) {
-                mycolor = new Color(255, 0, 50);
-            }
-            else if (GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed) {
-                mycolor = new Color(0, 255, 0);
-            }
-            else {
-                mycolor = new Color(255, 255, 255);
-            }
-
-
-            if (rotation < 360) {
-                rotation++;
-            }
-            else if (rotation >= 360) {
-                rotation = 0;
-            }
-
-            if (scale == 100 || scale == 0) {
-                scaleOperation *= -1;
-            }
-
-            scale += scaleOperation;
-
-            if ((spritePos.X + threerings.Width/2) >= GAMEWIDTH || spritePos.X - threerings.Width/2 <= 0) {
-                velocity.X *= -1;
-            }
-
-            if ((spritePos.Y + threerings.Height/2) >= GAMEHEIGHT || spritePos.Y - threerings.Height/2 <= 0) {
-                velocity.Y *= -1;
-            }
-
-            spritePos.X += (velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds);
-            spritePos.Y += (velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            threerings.Update(gameTime, GraphicsDevice);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.Lime);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), mycolor);
-            // spriteBatch.Draw(threerings, spritePos, Color.White);
-            // spriteBatch.Draw(threerings, new Rectangle((int)spritePos.X, (int)spritePos.Y, threerings.Width, threerings.Height), Color.White);
-            spriteBatch.Draw(threerings, new Rectangle((int)spritePos.X, (int)spritePos.Y, (int)(threerings.Width * (scale * 0.01)), (int)(threerings.Height * (scale * 0.01))), new Rectangle(0, 0, threerings.Width, threerings.Height), Color.White, MathHelper.ToRadians(rotation), new Vector2(threerings.Width / 2, threerings.Height / 2), SpriteEffects.FlipHorizontally, 1f);
-
+            background.Draw(gameTime, spriteBatch);
+            threerings.Draw(gameTime, spriteBatch);
 
             spriteBatch.End();
-
 
             base.Draw(gameTime);
         }

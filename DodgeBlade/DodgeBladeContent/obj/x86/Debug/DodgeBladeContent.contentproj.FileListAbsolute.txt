@@ -1,1 +1,2 @@
 c:\users\geordie\documents\visual studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBladeContent\obj\x86\Debug\DodgeBladeContent.contentprojResolveAssemblyReference.cache
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBladeContent\obj\x86\Debug\DodgeBladeContent.contentprojResolveAssemblyReference.cache
