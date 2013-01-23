@@ -16,3 +16,8 @@ C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\Do
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\DodgeBlade.pdb
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.dll
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.pdb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\bg01.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\spike00.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\wario00.xnb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.dll
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\SpriteClasses.pdb

@@ -16,28 +16,20 @@ namespace DodgeBlade {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public const short GAMEWIDTH = 1280;
-        public const short GAMEHEIGHT = 720;
+        Texture2D spike, wario, bg;
 
-        Texture2D backgroundTexture;
-        Texture2D threeringsTexture;
-
-        Sprite background;
-        Sprite threerings;
+        Sprite[] sprites = new Sprite[15];
 
         Random random = new Random();
 
         Color mycolor = new Color(255, 255, 255);
 
-        //float rotation;
-        //float scale = 50;
-        //int scaleOperation = 1;
-
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = GAMEWIDTH;
-            graphics.PreferredBackBufferHeight = GAMEHEIGHT;
+            graphics.PreferredBackBufferWidth = 469;
+            graphics.PreferredBackBufferHeight = 349;
+            this.IsMouseVisible = true;
 
         }
 
@@ -49,11 +41,18 @@ namespace DodgeBlade {
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            backgroundTexture = Content.Load<Texture2D>("images/background");
-            threeringsTexture = Content.Load<Texture2D>("images/threeringsSingle");
+            bg = Content.Load<Texture2D>("images/bg01");
+            spike = Content.Load<Texture2D>("images/spike00");
+            wario = Content.Load<Texture2D>("images/wario00");
 
-            background = new Sprite(backgroundTexture, new Vector2(0, 0), new Vector2(0, 0), false, 0, 1, SpriteEffects.None);
-            threerings = new Sprite(threeringsTexture, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2), new Vector2(random.Next(200, 301), random.Next(200, 301)), true, 10, 1, SpriteEffects.None);
+            for (int i = 0; i < sprites.Length; i++) {
+                if (i <= 5) {
+                    sprites[i] = new Sprite(spike, new Vector2(random.Next((spike.Width / 2) + 1, (GraphicsDevice.Viewport.Width - spike.Width / 2 - 1)), random.Next((spike.Height / 2 + 1), (GraphicsDevice.Viewport.Height - spike.Height / 2 - 1))), new Vector2(random.Next(100, 201), random.Next(100, 201)), true, 0, 1, SpriteEffects.None);
+                }
+                else {
+                    sprites[i] = new Sprite(wario, new Vector2(random.Next((wario.Width / 2) + 1, (GraphicsDevice.Viewport.Width - wario.Width/2 -1)), random.Next((wario.Height / 2 + 1), (GraphicsDevice.Viewport.Height - wario.Height / 2 - 1))), new Vector2(random.Next(100, 201), random.Next(100, 201)), true, 0, 1, SpriteEffects.None);
+                }
+            } 
         }
 
         protected override void UnloadContent() {
@@ -61,7 +60,9 @@ namespace DodgeBlade {
 
         protected override void Update(GameTime gameTime) {
 
-            threerings.Update(gameTime, GraphicsDevice);
+            foreach (Sprite s in sprites) {
+                s.Update(gameTime, GraphicsDevice);
+            }
 
             base.Update(gameTime);
         }
@@ -71,8 +72,11 @@ namespace DodgeBlade {
 
             spriteBatch.Begin();
 
-            background.Draw(gameTime, spriteBatch);
-            threerings.Draw(gameTime, spriteBatch);
+            spriteBatch.Draw(bg, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
+
+            foreach (Sprite s in sprites) {
+                s.Draw(gameTime, spriteBatch);
+            }
 
             spriteBatch.End();
 

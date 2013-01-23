@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\background.xnb</Output>
+      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\background.xnb</Output>
       <Time>2013-01-11T13:35:53.5900761-05:00</Time>
     </Item>
     <Item>
@@ -16,8 +16,35 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\threeringsSingle.xnb</Output>
+      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\threeringsSingle.xnb</Output>
       <Time>2013-01-11T13:39:35.5807733-05:00</Time>
+    </Item>
+    <Item>
+      <Source>images\bg01.png</Source>
+      <Name>images\bg01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\bg01.xnb</Output>
+      <Time>2013-01-22T13:05:28.5262261-05:00</Time>
+    </Item>
+    <Item>
+      <Source>images\spike00.png</Source>
+      <Name>images\spike00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\spike00.xnb</Output>
+      <Time>2013-01-22T13:05:28.5322264-05:00</Time>
+    </Item>
+    <Item>
+      <Source>images\wario00.png</Source>
+      <Name>images\wario00</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\images\wario00.xnb</Output>
+      <Time>2013-01-22T13:05:28.5212258-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -25,10 +52,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBladeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBladeContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBladeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBladeContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\DodgeBlade\DodgeBlade\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

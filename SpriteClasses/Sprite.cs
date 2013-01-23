@@ -58,8 +58,6 @@ namespace SpriteClasses{
         public SpriteEffects SpriteEffect { get; set; }
         public Texture2D TextureImage { get; set; }
 
-        public float scaleOperation = 0.1f;
-
         public Sprite() {
 
         }
@@ -93,12 +91,6 @@ namespace SpriteClasses{
                 else if (Rotation >= 360) {
                     Rotation = 0;
                 }
-
-                if (Scale >= 2 || Scale <= -2) {
-                    scaleOperation *= -1;
-                }
-
-                Scale += scaleOperation/2;
 
                 position.X += (currentVelocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds);
                 position.Y += (currentVelocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds);
