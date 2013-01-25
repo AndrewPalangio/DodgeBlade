@@ -5,7 +5,7 @@ C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\SpriteClasses
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\Timed Lab 4\SpriteClasses\obj\x86\Debug\SpriteClasses.pdb
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\bin\x86\Debug\SpriteClasses.dll
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\bin\x86\Debug\SpriteClasses.pdb
-C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\obj\x86\Debug\SpriteClasses.csprojResolveAssemblyReference.cache
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\obj\x86\Debug\SpriteClasses.dll
 C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\obj\x86\Debug\SpriteClasses.pdb
+C:\Users\Geordie\Documents\Visual Studio 2010\Projects\DodgeBlade\SpriteClasses\obj\x86\Debug\ResolveAssemblyReference.cache
