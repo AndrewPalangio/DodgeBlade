@@ -16,20 +16,22 @@ namespace DodgeBlade {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D spike, wario, bg;
-        const byte NUM_WARIOS = 10, NUM_SPIKES = 5;
+        Texture2D spike, wario, bg;                                         // textures
+        const byte NUM_WARIOS = 10, NUM_SPIKES = 5;                         // number of spikes and warios
 
         Sprite[] sprites;
         Random random = new Random();
-        const String SPIKE = "Spike", WARIO = "Wario";
+        const String SPIKE = "Spike", WARIO = "Wario";                      // names for the textureimages
 
+        // Keyboard and mouse state
         KeyboardState kbState;
+        KeyboardState oldKbState;
         MouseState mouseState;
 
-        // my vars
-        const byte IDLE = 0, LEFT = 1, UP = 2, RIGHT = 3, DOWN = 4;
-        bool isGamePaused = false;
-        byte wariosKilled = 0;
+        // "My" variables (Things not specified in assignment)
+        const byte IDLE = 0, LEFT = 1, UP = 2, RIGHT = 3, DOWN = 4;         // Used for input handling - see Sprite.Controls
+        bool isGamePaused = false;                                          // controlling if the game is paused or not
+        byte wariosKilled = 0;                                              // Number of warios killed - used this because other method of checking win was not working
 
         public Game1() {
             graphics = new GraphicsDeviceManager(this);
@@ -44,14 +46,15 @@ namespace DodgeBlade {
             base.Initialize();
         }
 
+        // (Re)Initialize important game settings
         private void InitGame() {
             sprites = new Sprite[NUM_SPIKES + NUM_WARIOS];
 
             for (int i = 0; i < sprites.Length; i++) {
-                if (i < NUM_SPIKES) {
+                if (i < NUM_SPIKES) {       // from 0 to 4, in this case
                     sprites[i] = new Sprite(spike, new Vector2(random.Next((spike.Width / 2) + 1, (GraphicsDevice.Viewport.Width - spike.Width / 2 - 1)), random.Next((spike.Height / 2 + 1), (GraphicsDevice.Viewport.Height - spike.Height / 2 - 1))), new Vector2(random.Next(-200, 201), random.Next(-200, 201)), true, 3, 1, SpriteEffects.None);
                     sprites[i].TextureImage.Name = SPIKE;
-                } else if (i < (NUM_WARIOS + NUM_SPIKES)) {
+                } else if (i < (NUM_WARIOS + NUM_SPIKES)) {     // from 4 to 14, in this case
                     sprites[i] = new Sprite(wario, new Vector2(random.Next((wario.Width / 2) + 1, (GraphicsDevice.Viewport.Width - wario.Width / 2 - 1)), random.Next((wario.Height / 2 + 1), (GraphicsDevice.Viewport.Height - wario.Height / 2 - 1))), new Vector2(random.Next(-200, 201), random.Next(-200, 201)), true, 0, 1, SpriteEffects.None);
                     sprites[i].TextureImage.Name = WARIO;
                 }
@@ -69,6 +72,7 @@ namespace DodgeBlade {
         }
 
         protected override void UnloadContent() {
+
         }
 
         public void Win() {
@@ -85,9 +89,11 @@ namespace DodgeBlade {
         protected override void Update(GameTime gameTime) {
             kbState = Keyboard.GetState(PlayerIndex.One);
 
-            if (kbState.IsKeyDown(Keys.F2)){
+            // Compare previous keyboard state to current, preventing the user from holding a button down indefinitely
+            if (kbState.IsKeyDown(Keys.F2) && oldKbState.IsKeyUp(Keys.F2)){
                 InitGame();
-            } else if (kbState.IsKeyDown(Keys.Escape)){
+            } else if (kbState.IsKeyDown(Keys.Escape) && oldKbState.IsKeyUp(Keys.Escape)){
+                // toggle game pause state
                 if (isGamePaused) {
                     isGamePaused = false;
                 } else {
@@ -95,11 +101,17 @@ namespace DodgeBlade {
                 }
             }
 
+            // Grab the 'old' keyboard state to compare to the new one
+            oldKbState = kbState;
+
             // Handle Mouse
+            // -- Didn't feel an oldMouseState checker was necessary in this project
             mouseState = Mouse.GetState();
 
-           if (!isGamePaused) {
-               foreach (Sprite s in sprites) {
+
+            // make sure game isn't paused, then loop through all sprites and handle things accordingly
+            if (!isGamePaused) {
+                foreach (Sprite s in sprites) {
                    if (mouseState.LeftButton == ButtonState.Pressed) {
                        if (s.CollisionMouse(mouseState.X, mouseState.Y)) {
                            if (s.TextureImage.Name == SPIKE) {
@@ -110,21 +122,24 @@ namespace DodgeBlade {
                                    Win();
                                }
 
-                               //for (int i = 4; i < sprites.Length; i++) {
-                               //    if (sprites[i].TextureImage.Name == WARIO && sprites[i].Alive == true) {
-                               //        break;
-                               //    } else {
-                               //        Console.WriteLine("{0}, name: {1}, alive: {2}", i, sprites[i].TextureImage.Name, sprites[i].Alive);
-                               //        Win();
-                               //    }
-                               //}
+                               /*
+                               // This doesn't work, and I can't quite see why, so I switched to the 'wariosKilled' counter way of doing things.
+                               for (int i = 5; i < sprites.Length; i++) {
+                                   if (sprites[i].TextureImage.Name == WARIO && sprites[i].Alive == true) {
+                                       break;
+                                   } else {
+                                       Console.WriteLine("{0}, name: {1}, alive: {2}", i, sprites[i].TextureImage.Name, sprites[i].Alive);
+                                       Win();
+                                   }
+                               }
+                               */
                            }
                        }
                    }
 
                    s.Update(gameTime, GraphicsDevice);
 
-               }
+                }
 
             }
 
@@ -135,7 +150,10 @@ namespace DodgeBlade {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            // Draw background - Background is not a sprite object because it seems very unecessary at this point - will change when background is no longer static
             spriteBatch.Draw(bg, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
+
+            // Draw all sprites
             foreach (Sprite s in sprites) {
                 s.Draw(gameTime, spriteBatch);
             }

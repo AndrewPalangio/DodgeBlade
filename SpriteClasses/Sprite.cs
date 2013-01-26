@@ -68,12 +68,12 @@ namespace SpriteClasses{
         }
 
 
-        // my vars
+        // my variables
         const byte IDLE = 0, LEFT = 1, UP = 2, RIGHT = 3, DOWN = 4;
 
 
         public Sprite() {
-
+            // TODO: add default values
         }
 
         public Sprite(Texture2D textureImage, Vector2 position, Vector2 velocity, bool setOrigin, float rotationSpeed, float scale, SpriteEffects spriteEffect) {
@@ -92,7 +92,7 @@ namespace SpriteClasses{
                 SpriteOrigin = Vector2.Zero;
             }
 
-            // Renamed 'active' to 'alive' as it made more sense
+            // Renamed 'active' to 'alive' as it made more sense to me in the game's current form
             Alive = true;
 
         }
@@ -132,6 +132,7 @@ namespace SpriteClasses{
 
         }
 
+        // Use this instead of seperate control methods - much cleaner, and simpler to work with
         public void Controls(byte direction) {
             if (direction == IDLE) {
                 velocity.X = 0;
